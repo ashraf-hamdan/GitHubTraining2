@@ -1,7 +1,7 @@
 package database.table;
 /**
  * 
- * @author ashraf
+ * @author ashraf hamdan
  *
  */
 public abstract class Outlay {
