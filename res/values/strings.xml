@@ -9,5 +9,6 @@
     <string name="title_activity_add_outlay">AddOutlay</string>
     <string name="title_activity_outlay_list">OutlayList</string>
     <string name="title_activity_income_list">IncomeList</string>
+    <string name="title_activity_login_screen">LoginScreen</string>
 
 </resources>
