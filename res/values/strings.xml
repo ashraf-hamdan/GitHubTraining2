@@ -10,5 +10,12 @@
     <string name="title_activity_outlay_list">OutlayList</string>
     <string name="title_activity_income_list">IncomeList</string>
     <string name="title_activity_login_screen">LoginScreen</string>
+    <string name="login">Login</string>
+    <string name="add_new_user">Add New User</string>
+    <string name="services">Services</string>
+    <string name="user_name">User Name</string>
+    <string name="pass">Password</string>
+    <string name="submit">Submit</string>
+    <string name="salary">Salary</string>
 
 </resources>
