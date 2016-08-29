@@ -1,79 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin" >
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".LoginScreen"
+    android:background="@drawable/log" >
 
-    <LinearLayout
-        android:id="@+id/login_layout"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/but_login"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+         android:onClick="onClickLogin"
+        android:background="@drawable/loogin" />
+
+    <EditText
+        android:id="@+id/Pass"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="5dp"
-            android:text="@string/user_name"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName" >
-
-            <requestFocus />
-        </EditText>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:paddingRight="5dp"
-            android:text="@string/pass"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPassword" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_above="@+id/but_login"
+        android:layout_alignLeft="@+id/but_login"
+        android:layout_marginBottom="50dp"
+        android:ems="10"
         android:gravity="center"
-        android:orientation="vertical" >
+        android:hint="Password" >
 
-        <Button
-            android:id="@+id/login"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClickLogin"
-            android:text="@string/login" />
-    </LinearLayout>
+        <requestFocus />
+    </EditText>
 
-</LinearLayout>
+    <EditText
+        android:id="@+id/your_name"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Pass"
+        android:layout_alignLeft="@+id/Pass"
+        android:layout_marginBottom="55dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Your Name" />
+   
+</RelativeLayout>

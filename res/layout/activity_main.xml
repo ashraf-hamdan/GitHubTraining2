@@ -6,6 +6,27 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity" 
+    android:background="@drawable/main">
+
+    <Button
+        android:id="@+id/new"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="147dp"
+        android:background="@drawable/neew"
+        android:onClick="newuser" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/new"
+        android:layout_alignTop="@+id/new"
+        android:layout_marginTop="61dp"
+        android:background="@drawable/logiin"
+        android:onClick="login" />
 
 </RelativeLayout>
