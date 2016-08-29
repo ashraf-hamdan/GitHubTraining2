@@ -16,11 +16,20 @@ public class HomeScreen extends Activity {
 		setContentView(R.layout.activity_home_screen);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.home_screen, menu);
-		return true;
-	}
+	// method add new Outlay for the user of the app
+    public void onClickaddOutlay(){
+
+    }
+
+    //adding new User if not have one to use the app
+    public void onClickaddUser(){
+
+
+    }
+
+    //make some services for the user if the app
+    public void onClickServices(){
+
+    }
 
 }

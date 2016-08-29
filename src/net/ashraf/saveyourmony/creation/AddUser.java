@@ -6,8 +6,11 @@ import net.ashraf.saveyourmony.R.menu;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.widget.Button;
 
 public class AddUser extends Activity {
+
+	Button btnSubmit;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -15,11 +18,10 @@ public class AddUser extends Activity {
 		setContentView(R.layout.activity_add_user);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.add_user, menu);
-		return true;
+	// take the value of name , password and salary then make a new acount to
+	// login and using the application
+	public void onClickNewUser() {
+
 	}
 
 }
