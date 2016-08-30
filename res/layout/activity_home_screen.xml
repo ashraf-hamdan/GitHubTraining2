@@ -44,7 +44,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginBottom="15dp"
             android:onClick="adduser"
-            android:background="@drawable/new" />
+            android:background="@drawable/neww" />
 
         <Button
             android:id="@+id/services"

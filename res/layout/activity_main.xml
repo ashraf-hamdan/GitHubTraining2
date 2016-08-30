@@ -10,7 +10,7 @@
     android:background="@drawable/main">
 
     <Button
-        android:id="@+id/new"
+        android:id="@+id/neww"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
@@ -23,9 +23,9 @@
         android:id="@+id/login"
         android:layout_width="240dp"
         android:layout_height="50dp"
-        android:layout_alignLeft="@+id/new"
-        android:layout_alignTop="@+id/new"
-        android:layout_marginTop="61dp"
+        android:layout_alignLeft="@+id/neww"
+        android:layout_alignTop="@+id/neww"
+        android:layout_marginTop="64dp"
         android:background="@drawable/logiin"
         android:onClick="login" />
 
