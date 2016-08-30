@@ -8,10 +8,11 @@ import android.app.Service;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+
 /**
  * 
  * @author ashraf
- *
+ * 
  */
 public class HomeScreen extends Activity {
 
@@ -22,18 +23,21 @@ public class HomeScreen extends Activity {
 	}
 
 	// method add new Outlay for the user of the app
-    public void addOutlay(View v){
-		Intent i = new Intent(HomeScreen.this,AddOutlay.class);
-		startActivity(i);}
+	public void addOutlay(View v) {
+		Intent i = new Intent(HomeScreen.this, AddOutlay.class);
+		startActivity(i);
+	}
 
-    //adding new User if not have one to use the app
-    public void adduser(View v){
-		Intent i = new Intent(HomeScreen.this,AddUser.class);
-		startActivity(i);}
+	// adding new User if not have one to use the app
+	public void adduser(View v) {
+		Intent i = new Intent(HomeScreen.this, AddUser.class);
+		startActivity(i);
+	}
 
-    //make some services for the user if the app
-    public void Services(View v){
-		Intent i = new Intent(HomeScreen.this,Service.class);
-		startActivity(i);}
+	// make some services for the user if the app
+	public void Services(View v) {
+		Intent i = new Intent(HomeScreen.this, Service.class);
+		startActivity(i);
+	}
 
 }
