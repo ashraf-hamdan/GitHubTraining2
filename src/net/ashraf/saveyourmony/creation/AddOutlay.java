@@ -1,5 +1,9 @@
 package net.ashraf.saveyourmony.creation;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import database.DatabaseHelper;
 import net.ashraf.saveyourmony.R;
 import net.ashraf.saveyourmony.R.layout;
 import net.ashraf.saveyourmony.R.menu;
@@ -11,19 +15,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class AddOutlay extends Activity implements View.OnClickListener{
-	  EditText name,  outlay_value;
-	  Button button;
-	  String Name,Outlay_value;
+public class AddOutlay extends Activity implements View.OnClickListener {
+	EditText name, outlay_value;
+	Button button;
+	String Name, Outlay_value;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_outlay);
-		    name = (EditText)this.findViewById(R.id.outlay_name);
-	        outlay_value=(EditText)this.findViewById(R.id.value);
-	        button = (Button) this.findViewById(R.id.btn_add);
-	        button.setOnClickListener(this);
+		name = (EditText) this.findViewById(R.id.outlay_name);
+		outlay_value = (EditText) this.findViewById(R.id.value);
+		button = (Button) this.findViewById(R.id.btn_add);
+		button.setOnClickListener(this);
 	}
 
 	@Override
@@ -32,63 +36,60 @@ public class AddOutlay extends Activity implements View.OnClickListener{
 		getMenuInflater().inflate(R.menu.add_outlay, menu);
 		return true;
 	}
-	 
-	
-	/*****When the button click , i check the value , complete here*****/
-    @Override
-    public void onClick(View v) {
 
-        switch(v.getId()){
-       
-        	
+	/***** When the button click , i check the value , complete here *****/
+	@Override
+	public void onClick(View v) {
 
-            case R.id.btn_add: 
+		switch (v.getId()) {
 
-                Name = name.getText().toString();
-                Outlay_value=outlay_value.getText().toString();
-                Boolean y= check(Name,Outlay_value);
-                if(y==false){
-                    name.setError("Invalid name");
-                    outlay_value.setError("Invalid name");
-                }
-                if(y==true){
-                    if (Name.isEmpty()) {
-                        name.setError("Invalid name");
+		case R.id.btn_add:
 
-                    } else if (Outlay_value.isEmpty()) {
-                    	outlay_value.setError("Invalid value");
+			Name = name.getText().toString();
+			Outlay_value = outlay_value.getText().toString();
+			Boolean y = check(Name, Outlay_value);
+			if (y == false) {
+				name.setError("Invalid name");
+				outlay_value.setError("Invalid name");
+			}
+			if (y == true) {
+				if (Name.isEmpty()) {
+					name.setError("Invalid name");
 
+				} else if (Outlay_value.isEmpty()) {
+					outlay_value.setError("Invalid value");
 
-                    }
-                    
-                    else {
-                    	
-                    	/******here write the code*****/
-                    	
-                    	
-                    	
-                    	
-                    	 Toast toast = Toast.makeText(this, "informaion saved", Toast.LENGTH_LONG);
-                         toast.show();
+				}
 
-                    }
-                }
-            	
-            	break;
-            	
-        }
-        
-        
-    }
-    
-    
-    public boolean check(String name,String Outlay_value){
-        if(name.equals("") && Outlay_value.equals("") ){
+				else {
+					/****** code to add outlay *****/
+					DatabaseHelper databasehelper = new DatabaseHelper(null);
+					Calendar calendar = Calendar.getInstance();
+					SimpleDateFormat date_format = new SimpleDateFormat(
+							"yyyy / MM / dd ");
+					String date = date_format.format(calendar.getTime());
+					long userID = 1;
+					databasehelper.insertOutlay(userID, Name, Outlay_value,
+							date);
+					Toast toast = Toast.makeText(this, "informaion saved",
+							Toast.LENGTH_LONG);
+					toast.show();
 
-            return false;
-        }
+				}
+			}
 
+			break;
 
-        return true;
-    }
+		}
+
+	}
+
+	public boolean check(String name, String Outlay_value) {
+		if (name.equals("") && Outlay_value.equals("")) {
+
+			return false;
+		}
+
+		return true;
+	}
 }
