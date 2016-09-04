@@ -2,12 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e3e3e3"
+    android:background="@drawable/backg"
     android:orientation="vertical"
     android:padding="@dimen/activity_horizontal_margin"
     tools:context=".LoginActivity" >
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.2"
@@ -16,14 +17,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="17dp"
             android:gravity="center"
             android:text="Outlay"
-            android:textColor="#333333"
-            android:textSize="30sp" />
-    </RelativeLayout>
+            android:textColor="#008000"
+            android:textSize="50dp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,22 +34,40 @@
             android:id="@+id/outlay_name"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_margin="30dp"
+            android:background="@drawable/ashraftest"
+            android:ems="10"
             android:hint="name"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/black"
+            android:textStyle="bold" >
+
+            <requestFocus />
+        </EditText>
 
         <EditText
             android:id="@+id/value"
-            android:layout_width="match_parent"
+            android:layout_width="239dp"
             android:layout_height="50dp"
+            android:layout_margin="40dp"
+            android:background="@drawable/ashraftest"
+            android:ems="10"
             android:hint="value"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/black"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_add"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Save" />
+            android:layout_width="155dp"
+            android:layout_height="112dp"
+            android:layout_marginLeft="70dp"
+            android:background="@drawable/test_selector"
+            android:gravity="center"
+            android:text="Save"
+            android:textStyle="italic" />
     </LinearLayout>
 
 </LinearLayout>
