@@ -2,6 +2,7 @@ package net.ashraf.saveyourmony.service;
 
 import java.util.ArrayList;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,75 +15,62 @@ import net.ashraf.saveyourmony.R.layout;
 import net.ashraf.saveyourmony.R.menu;
 
 public class MyAdapterClass extends BaseAdapter {
-    
-    private Context context;
-  
-    TextView textView1,textView2,textView3,textView4;
-    String outlay_id,Outlay_name,Outlay_value,Outlay_date;
-   
 
+	private Context context;
 
-    public MyAdapterClass(){
+	TextView outlayId, outlayName, outlayValue, outlayDate;
+	private ArrayList<Integer> id;
+	private ArrayList<String> name;
+	private ArrayList<String> value;
+	private ArrayList<String> date;
 
-    }
+	public MyAdapterClass(Context c, ArrayList<Integer> id,
+			ArrayList<String> name, ArrayList<String> value,
+			ArrayList<String> date) {
+		this.context = c;
+		this.id = id;
+		this.date = date;
+		this.name = name;
+		this.value = value;
+	}
 
-    public MyAdapterClass(Context context){
+	@Override
+	public int getCount() {
+		return id.size();
 
-        
-        this.context=context;
+	}
 
+	@Override
+	public Object getItem(int arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-    }
+	@Override
+	public long getItemId(int arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
- 
-    @Override
-    public int getCount() {
-        return 1;  /***** Must change depend on the number of value from database**/
-    }
+	@Override
+	public View getView(int position, View arg1, ViewGroup arg2) {
+		LayoutInflater layoutInflater = (LayoutInflater) context
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-    @Override
-    public Object getItem(int position) {
-        return null;/***** must change depend on  database**/
-    }
+		View view = layoutInflater.inflate(R.layout.item, null);
 
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
+		outlayId = (TextView) view.findViewById(R.id.textView1);
+		outlayName = (TextView) view.findViewById(R.id.textView2);
+		outlayValue = (TextView) view.findViewById(R.id.textView3);
+		outlayDate = (TextView) view.findViewById(R.id.textView4);
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+		outlayId.setText(String.valueOf(id.get(position)));
+		outlayName.setText(name.get(position));
+		outlayValue.setText(value.get(position));
+		outlayDate.setText(date.get(position));
 
-        View view=null;
-        //ViewHolder viewHolder;
-        if(convertView==null){
+		return view;
 
+	}
 
-            LayoutInflater layoutInflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view= layoutInflater.inflate(R.layout.item,parent,false);
-
-
-        }
-        else {
-            view=convertView;
-
-        }
-
-        textView1=(TextView)view.findViewById(R.id.textView1);
-        textView2=(TextView)view.findViewById(R.id.textView2);
-
-        textView3=(TextView)view.findViewById(R.id.textView3);
-        textView4=(TextView)view.findViewById(R.id.textView4);
-        
-        
-        
-        
-        /******get the data frome database then add it to textview1,textview2,textview3,textview4*****/
-       
-
-        return view;
-
-    }
 }
-
-

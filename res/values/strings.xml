@@ -18,5 +18,7 @@
     <string name="submit">Submit</string>
     <string name="salary">Salary</string>
     <string name="addOutlay">add Outlay</string>
+    <string name="title_activity_serv">Serv</string>
+    <string name="title_activity_services">Services</string>
 
 </resources>

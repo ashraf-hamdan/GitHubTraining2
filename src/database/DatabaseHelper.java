@@ -7,6 +7,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 /**
  * 
@@ -14,8 +15,9 @@ import android.database.sqlite.SQLiteOpenHelper;
  * 
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
-	public final static String DATABASE_NAME = "sm.db";
+	public final static String DATABASE_NAME = "SYM3.db";
 	public final static int DATABASE_VERSION = 1;
+	Context context;
 
 	public DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -37,7 +39,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	/**
 	 * this method get three @param name password salary to add new User and it
 	 * return user ID after add he but if any not add the method return -1
-	 * @return user id  if Success and -1 if fail 
+	 * 
+	 * @return user id if Success and -1 if fail
 	 */
 	public long insertUser(String name, String password, Integer salary) {
 		SQLiteDatabase db = this.getWritableDatabase();
@@ -54,7 +57,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	/**
 	 * this method get four @param userId name value date to add new outlay and
 	 * it return outlay ID after add it but if any not add the method return -1
-	 * @return Outlay id if Success and -1 if fail 
+	 * 
+	 * @return Outlay id if Success and -1 if fail
 	 */
 	public long insertOutlay(long userID, String name, String value, String date) {
 		SQLiteDatabase db = this.getWritableDatabase();
@@ -83,8 +87,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 
 	/**
-	 * this method get one @param it user id and @return all outlay related
-	 * to this user
+	 * this method get one @param it user id and @return all outlay related to
+	 * this user
 	 * 
 	 * @return all Outlay to this User
 	 * 
@@ -93,15 +97,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		SQLiteDatabase db = this.getWritableDatabase();
 		Cursor cursor = db.query(Outlay.OUTLAY_TABLE, new String[] {
 				Outlay.OUTLAY_NAME, Outlay.OUTLAY_VALUE, Outlay.OUTLAY_DATE,
-				Outlay.OUTLAY_USER_ID }, Outlay.OUTLAY_USER_ID + "= ?",
-				new String[] { userID }, null, null, null);
+				Outlay.OUTLAY_USER_ID, Outlay.OUTLAY_ID },
+				Outlay.OUTLAY_USER_ID + "= ?", new String[] { userID }, null,
+				null, null);
 		return cursor;
 	}
 
 	/**
 	 * this method get tow @param it outlay Date and user id and @return All
 	 * outlay to this user in this date
-	 * @return  all Outlay to this User in this date
+	 * 
+	 * @return all Outlay to this User in this date
 	 */
 	public Cursor getAllOutlayInSpiseficDate(String outlayDate, String userID) {
 		SQLiteDatabase db = this.getWritableDatabase();
@@ -114,11 +120,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 
 	/**
-	 * this method  cheek if the user valid or not after that it
+	 * this method cheek if the user valid or not after that it
+	 * 
 	 * @param username
 	 * @param password
-	 *  
-	 * @return a true if  he valid or false  if he not valid
+	 * 
+	 * @return a true if he valid or false if he not valid
 	 */
 	public boolean Login(String username, String password) {
 		SQLiteDatabase db = this.getWritableDatabase();
@@ -131,6 +138,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			}
 		}
 		return false;
+	}
+
+	public String getSalaryByUserID(String userID) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		Cursor cursor = db.query(User.USER_TABLE, null, " id=?",
+				new String[] { userID }, null, null, null);
+
+		cursor.moveToFirst();
+		String salary = cursor.getString(cursor.getColumnIndex("salary"));
+
+		cursor.close();
+		return salary;
 	}
 
 }
