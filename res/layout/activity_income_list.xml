@@ -1,119 +1,130 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#e3e3e3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/imageswood"
+    android:orientation="vertical"
     android:padding="@dimen/activity_horizontal_margin"
-    tools:context=".LoginActivity"
-    android:orientation="vertical">
- 
-    <RelativeLayout
+    android:weightSum="10"
+    tools:context=".LoginActivity" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_weight="0.1"
-        android:orientation="vertical">
+        android:layout_weight="0.14"
+        android:orientation="vertical" >
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:text="Income List"
-            android:textColor="#333333"
-            android:textSize="30sp" />
- 
-    </RelativeLayout>
- 
-     <LinearLayout
+            android:textColor="@android:color/white"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.25"
-        android:orientation="vertical">
- 
-<LinearLayout 
-   
-   android:layout_width="match_parent"
-   android:layout_height="60dp"
-   android:orientation="horizontal"
-   android:weightSum="1" >
-<TextView
-    android:id="@+id/Texpenses"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_weight="0.5"
-    
-    android:text="Total expenses" />
-<TextView
-    android:id="@+id/value_Texpenses"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_weight="0.5"
-    android:gravity="center"
-   
-  />
- </LinearLayout>
+        android:layout_weight="8"
+        android:orientation="vertical"
+        android:weightSum="6" >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:weightSum="2" >
 
+            <TextView
+                android:id="@+id/Texpenses"
+                android:layout_width="146dp"
+                android:layout_height="match_parent"
+                android:paddingRight="10dp"
+                android:text="Total Expenses"
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-<LinearLayout 
-   android:layout_width="match_parent"
-   android:layout_height="60dp"
-   android:orientation="horizontal"
-      
-    >
-<TextView
-    android:id="@+id/income"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_weight="0.5"
-    
-    android:text="Income" />
-<TextView
-    android:id="@+id/value_income"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_weight="0.5"
-    android:gravity="center"
-     
-     />
- </LinearLayout>
+            <TextView
+                android:id="@+id/value_Texpenses"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/razan"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:padding="20dp" >
 
-<TextView
-    android:id="@+id/line"
-    style="?android:attr/listSeparatorTextViewStyle"
-    android:paddingTop="5dip"
-    android:gravity="center_horizontal"
-    android:layout_below="@+id/connect_help"
-    android:layout_width="match_parent"
-    android:layout_height="1dp"
-    android:background="#000" />
+            <TextView
+                android:id="@+id/income"
+                android:layout_width="83dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.54"
+                android:paddingRight="5dp"
+                android:text="Income"
+                android:textColor="@android:color/white"
+                android:textSize="30dp"
+                android:textStyle="bold" />
 
-<LinearLayout 
-   android:layout_width="match_parent"
-   android:layout_height="100dp"
-   android:orientation="horizontal"
-      
-    >
-<TextView
-    android:id="@+id/result"
-    android:layout_width="fill_parent"
-    android:layout_height="90dp"
-    android:layout_weight="0.5"
-    
-    android:text="Result" />
-<TextView
-    android:id="@+id/value_result"
-    android:layout_width="fill_parent"
-    android:layout_height="90dp"
-    android:layout_weight="0.5"
-    android:gravity="center"
-    />
- </LinearLayout>
+            <TextView
+                android:id="@+id/value_income"
+                android:layout_width="119dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/razan"
+                android:gravity="center"
+                android:padding="20dp"
+                android:paddingLeft="10dp"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:padding="20dp" >
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="wrap_content"
+                android:layout_height="73dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="bottom"
+                android:paddingRight="5dp"
+                android:text="Result"
+                android:textColor="@android:color/white"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/value_result"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.13"
+                android:background="@drawable/razan"
+                android:gravity="left"
+                android:paddingEnd="20dp"
+                android:paddingLeft="10dp"
+                android:textColor="@android:color/black"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
-</LinearLayout>
- 
-   
- 

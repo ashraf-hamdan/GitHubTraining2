@@ -1,11 +1,24 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:background="@drawable/bgincome"
+    android:orientation="vertical" >
 
     <ListView
         android:id="@+id/listview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_width="194dp"
+        android:layout_height="388dp" >
     </ListView>
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/empty"
+        android:layout_width="214dp"
+        android:layout_height="fill_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="No Item Found"
+        android:textColor="#FFFF00"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+</LinearLayout>
